@@ -1,3 +1,4 @@
+#pragma warning disable 0414
 using Unity.Entities;
 using Unity.Transforms;
 
@@ -24,3 +25,4 @@ namespace ZombieDOTS
         }
     }
 }
+#pragma warning restore 0414

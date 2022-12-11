@@ -11,8 +11,10 @@ namespace ZombieDOTS
             new ComponentType(typeof(LocalTransform)),
             new ComponentType(typeof(ParentTransform)),
             new ComponentType(typeof(WorldTransform)),
+            new ComponentType(typeof(PerformAttack)),
             new ComponentType(typeof(Speed)),
-            new ComponentType(typeof(PerformAttack))
+            new ComponentType(typeof(SpeedChangeTime)),
+            new ComponentType(typeof(RandomComponent)),
         };
     }
 }

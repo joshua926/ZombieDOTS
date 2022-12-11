@@ -1,5 +1,6 @@
 #pragma warning disable 0414
 using Unity.Entities;
+using Unity.Mathematics;
 using Unity.Transforms;
 
 namespace ZombieDOTS
@@ -10,7 +11,9 @@ namespace ZombieDOTS
         public readonly TransformAspect transformAspect;
         readonly RefRO<Zombie> zombie;
         readonly RefRW<Speed> speed;
+        readonly RefRW<SpeedChangeTime> speedChange;
         readonly EnabledRefRW<PerformAttack> performAttack;
+        readonly RefRW<RandomComponent> rand;
 
         public float Speed
         {
@@ -18,10 +21,38 @@ namespace ZombieDOTS
             set => speed.ValueRW.value = value;
         }
 
+        public float SpeedPercent
+        {
+            get => speed.ValueRO.Percent;
+            set => speed.ValueRW.Percent = value;
+        }
+
         public bool PerformAttack
         {
             get => performAttack.ValueRO;
             set => performAttack.ValueRW = value;
+        }
+
+        public SpeedChangeTime SpeedChange
+        {
+            get => speedChange.ValueRO;
+            set => speedChange.ValueRW = value;
+        }
+
+        public Random Random
+        {
+            get => rand.ValueRO.value;
+            set => rand.ValueRW.value = value;
+        }
+
+        public void Init(uint seed)
+        {
+            transformAspect.LocalPosition = 0;
+            transformAspect.LocalScale = 1;
+            transformAspect.LocalRotation = quaternion.identity;
+            Speed = 0;
+            PerformAttack = false;
+            Random = new Random(seed);
         }
     }
 }

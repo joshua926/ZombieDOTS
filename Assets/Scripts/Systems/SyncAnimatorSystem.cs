@@ -18,7 +18,7 @@ namespace ZombieDOTS
         {
             foreach (var (speed, animator) in SystemAPI.Query<Speed, AnimatorRef>())
             {
-                animator.value.SetFloat(speedID, speed.value);
+                animator.value.SetFloat(speedID, speed.Percent);
             }
             var ecbBeginPres =
                 SystemAPI.GetSingleton<BeginPresentationEntityCommandBufferSystem.Singleton>()

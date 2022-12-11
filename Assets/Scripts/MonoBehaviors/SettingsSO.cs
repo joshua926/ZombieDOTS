@@ -3,9 +3,9 @@ using UnityEngine;
 namespace ZombieDOTS
 {
     [CreateAssetMenu]
-    public class PrefabStoreSO : ScriptableObject
+    public class SettingsSO : ScriptableObject
     {
-        public static PrefabStoreSO Singleton { get; private set; }
+        public static SettingsSO Instance { get; private set; }
 
         [SerializeField] GameObject zombie;
 
@@ -23,13 +23,13 @@ namespace ZombieDOTS
 
         void SetSingleton()
         {
-            if (Singleton && Singleton != this)
+            if (Instance && Instance != this)
             {
                 Debug.LogWarning($"There should be only one asset of type {GetType()}.");
                 return;
             }
 
-            Singleton = this;
+            Instance = this;
         }
     }
 }

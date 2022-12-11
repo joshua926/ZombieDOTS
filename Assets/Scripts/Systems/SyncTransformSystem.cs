@@ -5,10 +5,9 @@ using Unity.Transforms;
 namespace ZombieDOTS
 {
     /// <summary> Copies entity transform values to MonoBehavior transform values. </summary>
-    [UpdateAfter(typeof(CreateDestroyZombieGOSystem))]
-    public partial class TransformSyncSystem : SystemBase
+    [UpdateAfter(typeof(SyncZombieGOSystem))]
+    public partial class SyncTransformSystem : SystemBase
     {
-
         protected override void OnUpdate()
         {
             foreach (var (tr, ta) in SystemAPI.Query<TransformRef, LocalTransform>())

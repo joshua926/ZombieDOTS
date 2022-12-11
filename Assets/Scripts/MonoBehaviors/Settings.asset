@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 727243ab23ed435e9a8139e2397c28e1, type: 3}
-  m_Name: Prefab Store
+  m_Name: Settings
   m_EditorClassIdentifier: 
   zombie: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
